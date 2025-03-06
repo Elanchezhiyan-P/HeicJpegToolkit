@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>HeicJpegToolkit</Title>
+    <Authors>Elanchezhiyan P</Authors>
+    <Product>HeicJpegToolkit</Product>
+    <Description>A library to convert HEIC images to JPEG and preserve metadata.</Description>
+    <Copyright>Copyright © Your Company 2025</Copyright>
+    <PackageProjectUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</RepositoryUrl>
+    <Version>1.0.0</Version>
+    <PackageTags>heic, jpeg, conversion, image-processing</PackageTags>
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+  </PropertyGroup>
+
+</Project>

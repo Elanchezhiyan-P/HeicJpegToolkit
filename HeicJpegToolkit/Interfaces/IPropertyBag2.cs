@@ -1,0 +1,43 @@
+﻿using HeicJpegToolkit.Helpers.Constants;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using HeicJpegToolkit.Structures;
+
+namespace HeicJpegToolkit.Interfaces
+{
+    [ComImport]
+    [Guid(IID.IPropertyBag2)]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IPropertyBag2
+    {
+        int CountProperties();
+
+        void GetPropertyInfo(
+             [In] int iProperty,
+             [In] int cProperties,
+             [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] PROPBAG2[] pPropBag,
+             [Out] out int pcProperties);
+
+        void LoadObject(
+            [In, MarshalAs(UnmanagedType.LPWStr)] string pstrName,
+            [In] int dwHint,
+            [In, MarshalAs(UnmanagedType.IUnknown)] object pUnkObject,
+            [In] IErrorLog? pErrLog);
+
+        void Read(
+            [In] int cProperties,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] PROPBAG2[] pPropBag,
+            [In] IErrorLog? pErrLog,
+            [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object?[] pvarValue,
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] phrError);
+
+        void Write(
+            [In] int cProperties,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] PROPBAG2[] pPropBag,
+            [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object?[] pvarValue);
+    }
+}

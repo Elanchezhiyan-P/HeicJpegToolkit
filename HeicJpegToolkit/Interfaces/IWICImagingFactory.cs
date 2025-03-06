@@ -1,0 +1,111 @@
+﻿using HeicJpegToolkit.Helpers.Constants;
+using HeicJpegToolkit.Helpers.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HeicJpegToolkit.Interfaces
+{
+    [ComImport]
+    [Guid(IID.IWICImagingFactory)]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IWICImagingFactory
+    {
+        IWICBitmapDecoder CreateDecoderFromFilename(
+            [In, MarshalAs(UnmanagedType.LPWStr)] string wzFilename,
+            [In] ref Guid pguidVendor,
+            [In] StreamAccessMode dwDesiredAccess,
+            [In] WICDecodeOptions metadataOptions);
+
+        IWICBitmapDecoder CreateDecoderFromStream(
+            [In] IStream pIStream,
+            [In] ref Guid pguidVendor,
+            [In] WICDecodeOptions metadataOptions);
+
+        IWICBitmapDecoder CreateDecoderFromFileHandle(
+            [In] nint hFile,
+            [In] ref Guid pguidVendor,
+            [In] WICDecodeOptions metadataOptions);
+
+        IWICComponentInfo CreateComponentInfo(
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid clsidComponent);
+
+        IWICBitmapDecoder CreateDecoder(
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat,
+            [In][Optional] ref Guid pguidVendor);
+
+        IWICBitmapEncoder CreateEncoder(
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat,
+            [In][Optional] ref Guid pguidVendor);
+
+        IWICPalette CreatePalette();
+
+        IWICFormatConverter CreateFormatConverter();
+
+        IWICBitmapScaler CreateBitmapScaler();
+
+        IWICBitmapClipper CreateBitmapClipper();
+
+        IWICBitmapFlipRotator CreateBitmapFlipRotator();
+
+        IWICStream CreateStream();
+
+        IWICColorContext CreateColorContext();
+
+        IWICColorTransform CreateColorTransformer();
+
+        IWICBitmap CreateBitmap(
+            [In] int uiWidth,
+            [In] int uiHeight,
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat,
+            [In] WICBitmapCreateCacheOption option);
+
+        IWICBitmap CreateBitmapFromSource(
+            [In] IWICBitmapSource pIBitmapSource,
+            [In] WICBitmapCreateCacheOption option);
+
+        IWICBitmap CreateBitmapFromSourceRect(
+            [In] IWICBitmapSource pIBitmapSource,
+            [In] int x,
+            [In] int y,
+            [In] int width,
+            [In] int height);
+
+        IWICBitmap CreateBitmapFromMemory(
+            [In] int uiWidth,
+            [In] int uiHeight,
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat,
+            [In] int cbStride,
+            [In] int cbBufferSize,
+            [In, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U1, SizeParamIndex = 4)] byte[] pbBuffer);
+
+        IWICBitmap CreateBitmapFromHBITMAP(
+            [In] nint hBitmap,
+            [In] nint hPalette,
+            [In] WICBitmapAlphaChannelOption options);
+
+        IWICBitmap CreateBitmapFromHICON(
+            [In] nint hIcon);
+
+        IEnumUnknown CreateComponentEnumerator(
+            [In] WICComponentType componentTypes,
+            [In] WICComponentEnumerateOptions options);
+
+        IWICFastMetadataEncoder CreateFastMetadataEncoderFromDecoder(
+            [In] IWICBitmapDecoder pIDecoder);
+
+        IWICFastMetadataEncoder CreateFastMetadataEncoderFromFrameDecode(
+            [In] IWICBitmapFrameDecode pIFrameDecoder);
+
+        IWICMetadataQueryWriter CreateQueryWriter(
+            [In, MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat,
+            [In][Optional] ref Guid pguidVendor);
+
+        IWICMetadataQueryWriter CreateQueryWriterFromReader(
+            [In] IWICMetadataQueryReader pIQueryReader,
+            [In][Optional] ref Guid pguidVendor);
+    }
+}
