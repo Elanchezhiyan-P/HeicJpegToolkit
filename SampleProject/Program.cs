@@ -4,7 +4,7 @@
     {
         static async Task Main(string[] args)
         {
-            string inputFilePath = "C:\\Users\\DELL\\Desktop\\HEIC\\00008120-000C48DE016A601EIMG_0181.jpg";
+            string inputFilePath = "";
             string outputFolderPath = string.Empty;
 
             if (!File.Exists(inputFilePath))
