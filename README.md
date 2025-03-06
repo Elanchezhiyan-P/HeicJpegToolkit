@@ -1,6 +1,6 @@
 # HEIC to JPG Converter
 
-This program allows you to convert HEIC images to JPG format using the **HeicJpegToolkit** library. Follow the instructions below to use the program.
+This program allows you to convert HEIC images to JPG format using the HeicJpegToolkit library. It supports various output formats, including PNG, JPEG, TIFF, GIF, WMP, and HEIF, making it a versatile solution for your image conversion needs.
 
 ## How to Use the HEIC to JPG Converter
 
@@ -25,7 +25,14 @@ Define the folder where you want to save the converted JPG image by setting the 
 string outputFolderPath = "C:\\path\\to\\output\\folder";
 ```
 
-### 4. Run the Program:
+### 4. Set the Output Format (Optional):
+You can specify the desired output format (such as JPG, PNG, TIFF, GIF, etc.) by setting the outputFormat variable. But, by default, it will take JPEG as the format
+
+```csharp
+string outputFormat = "JPEG"; // Other options: "PNG", "TIFF", "GIF", "WMP", "HEIF"
+```
+
+### 5. Run the Program:
 Once you have set the file paths, run the program. It will:
 
 Check if the input file exists.
@@ -33,9 +40,18 @@ Verify that the input file is in HEIC format.
 Create the output folder if it doesn't exist.
 Convert the HEIC file to a JPG file and save it to the specified output folder.
 
-### 5. View the Result:
+### 6. View the Result:
 After the conversion, if successful, the program will display the path of the saved JPG image. If the conversion fails, it will show an error message explaining the reason.
 
+---
+
+### Supported Output Formats:
+ - JPEG
+ - PNG
+ - TIFF
+ - GIF
+ - WMP (Windows Media Photo)
+ - HEIF
 
 ---
 

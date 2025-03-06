@@ -1,32 +1,15 @@
-﻿namespace SampleProject
+﻿using HeicJpegToolkit.Helpers.Enums;
+
+namespace SampleProject
 {
     internal class Program
     {
         static async Task Main(string[] args)
         {
-            string inputFilePath = "";
+            string inputFilePath = ""; //Enter the input file path
             string outputFolderPath = string.Empty;
 
-            if (!File.Exists(inputFilePath))
-            {
-                Console.WriteLine("File doesn't exists");
-                Exit();
-                return;
-            }
-
-            if(!Path.GetExtension(inputFilePath).Equals(".heic", StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("The file is not in HEIC format");
-                Exit();
-                return;
-            }
-
-            if (!Directory.Exists(outputFolderPath))
-            {
-                Directory.CreateDirectory(outputFolderPath);
-            }
-            
-            var result = await HeicJpegToolkit.HeicJpegToolkit.ConvertFile(inputFilePath, outputFolderPath);
+            var result = await HeicJpegToolkit.HeicJpegToolkit.ConvertFile(inputFilePath, outputFolderPath, ImageFormat.JPEG);
 
             if (result.IsConverted)
             {
@@ -36,11 +19,7 @@
             {
                 Console.WriteLine($"Image conversion failed. Reason: {result.Reason}");
             }
-            Exit();
-        }
 
-        static void Exit()
-        {
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
