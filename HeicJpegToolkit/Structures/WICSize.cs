@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeicJpegToolkit.Structures
+﻿namespace HeicJpegToolkit.Structures
 {
-    public struct WICSize : IEquatable<WICSize>
+    public readonly struct WICSize(int width, int height) : IEquatable<WICSize>
     {
-        public WICSize(int width, int height)
-        {
-            Width = width;
-            Height = height;
-        }
-
-        public int Width { get; }
-        public int Height { get; }
+        public int Width { get; } = width;
+        public int Height { get; } = height;
 
         public override bool Equals(object? obj)
         {

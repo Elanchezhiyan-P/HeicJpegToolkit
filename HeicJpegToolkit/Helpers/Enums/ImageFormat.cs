@@ -7,6 +7,9 @@
         TIFF,
         GIF,
         WMP,
-        HEIF
+        HEIF,
+        BMP,
+        WEBP,
+        ICO
     }
 }

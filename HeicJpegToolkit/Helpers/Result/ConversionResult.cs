@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeicJpegToolkit.Helpers.Result
+﻿namespace HeicJpegToolkit.Helpers.Result
 {
     public class ConversionResult
     {

@@ -1,11 +1,6 @@
-﻿using HeicJpegToolkit.Helpers.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HeicJpegToolkit.Helpers.Constants;
+using HeicJpegToolkit.Helpers.Enums;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using HeicJpegToolkit.Helpers.Constants;
 
 namespace HeicJpegToolkit.Interfaces
 {
