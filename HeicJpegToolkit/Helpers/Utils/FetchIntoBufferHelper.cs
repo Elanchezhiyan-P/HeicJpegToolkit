@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeicJpegToolkit.Helpers.Utils
+﻿namespace HeicJpegToolkit.Helpers.Utils
 {
     internal delegate void FetchIntoBuffer<T>(int size, T[]? buffer, out int length);
 
