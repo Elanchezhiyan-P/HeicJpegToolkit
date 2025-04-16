@@ -37,9 +37,16 @@ jobs:
     - name: Pack NuGet Packages
       run: |
         dotnet pack -c Release --no-build --output ./nupkgs  # Pack NuGet packages
+        echo "Listing files in ./nupkgs/"
         ls -la ./nupkgs  # List the contents of the nupkgs directory to check for .nupkg files
+
+    - name: List contents of the working directory
+      run: |
+        echo "Listing contents of the working directory:"
+        ls -la  # List all files and directories in the current directory
 
     - name: Push to NuGet
       run: |
+        echo "Listing files in ./nupkgs/ before pushing"
         ls -la ./nupkgs  # Double check the files before pushing
         dotnet nuget push "./nupkgs/*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --skip-duplicate
