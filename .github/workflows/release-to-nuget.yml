@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x  # Ensure using .NET 8.0.x version
+        dotnet-version: 6.0.x  # Ensure using .NET 6.0.x version
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.3.1  # Add MSBuild setup for build and pack tasks
@@ -31,8 +31,15 @@ jobs:
     - name: Test
       run: dotnet test -c Release --no-build --verbosity normal  # Run tests without rebuilding
 
+    - name: Clean old .nupkg files
+      run: rm -rf ./nupkgs/*.nupkg  # Remove any existing .nupkg files
+
     - name: Pack NuGet Packages
-      run: dotnet pack -c Release --no-build --output ./nupkgs  # Pack NuGet packages
+      run: |
+        dotnet pack -c Release --no-build --output ./nupkgs  # Pack NuGet packages
+        ls -la ./nupkgs  # List the contents of the nupkgs directory to check for .nupkg files
 
     - name: Push to NuGet
-      run: dotnet nuget push "./nupkgs/*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      run: |
+        ls -la ./nupkgs  # Double check the files before pushing
+        dotnet nuget push "./nupkgs/*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --skip-duplicate
