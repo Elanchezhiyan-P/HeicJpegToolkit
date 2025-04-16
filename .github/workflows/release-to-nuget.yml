@@ -9,7 +9,7 @@ on:
         type: string
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build-and-publish:
@@ -34,6 +34,9 @@ jobs:
 
       - name: Create the package
         run: dotnet pack --configuration Release --output ./nupkgs
+
+      - name: List files in ./nupkgs (for troubleshooting)
+        run: ls -la ./nupkgs
 
       - name: Publish the package to GPR
         run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
