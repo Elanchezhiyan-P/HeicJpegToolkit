@@ -144,7 +144,7 @@ namespace HeicJpegToolkit
             };
 
         // Public method that initiates the conversion and accepts input file and output folder
-        public static async Task<ConversionResult> ConvertFile(string inputFilePath, string outputFolderPath, ImageFormat targetFormat = ImageFormat.JPEG)
+        public static ConversionResult ConvertFile(string inputFilePath, string outputFolderPath, ImageFormat targetFormat = ImageFormat.JPEG)
         {
             if (!OperatingSystem.IsWindows())
             {
