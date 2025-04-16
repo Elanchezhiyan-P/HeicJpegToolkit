@@ -36,4 +36,4 @@ jobs:
         run: dotnet pack --configuration Release --output ./nupkgs
 
       - name: Publish the package to GPR
-        run: dotnet nuget push ./nupkgs/*.nupkg --source "GitHub" --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
