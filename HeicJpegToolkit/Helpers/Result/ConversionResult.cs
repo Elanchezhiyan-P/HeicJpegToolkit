@@ -2,27 +2,15 @@
 {
     public class ConversionResult
     {
-        public bool IsConverted { get; set; }  // Indicates whether the conversion was successful or not
-        public string OutputFilePath { get; set; }  // Path of the output file (if conversion is successful)
-        public string ErrorMessage { get; set; }  // Error message if something went wrong during the conversion
-        public string Reason { get; set; }  // Reason for failure or additional information
+        public string? OutputFilePath { get; set; }
+        public string? Reason { get; set; }
+        public bool Success => string.IsNullOrEmpty(Reason);
 
-        // Constructor for success result
-        public ConversionResult(string outputFilePath)
+        public ConversionResult(string path) => OutputFilePath = path;
+        public ConversionResult(string message, string? reason = null)
         {
-            IsConverted = true;
-            OutputFilePath = outputFilePath;
-            ErrorMessage = string.Empty;
-            Reason = "Conversion successful";
-        }
-
-        // Constructor for failure result
-        public ConversionResult(string errorMessage, string reason = "")
-        {
-            IsConverted = false;
-            OutputFilePath = string.Empty;
-            ErrorMessage = errorMessage;
-            Reason = reason;
+            OutputFilePath = null;
+            Reason = reason ?? message;
         }
     }
 }

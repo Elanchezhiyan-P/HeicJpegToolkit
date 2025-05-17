@@ -2,14 +2,6 @@
 {
     public enum ImageFormat
     {
-        PNG,
-        JPEG,
-        TIFF,
-        GIF,
-        WMP,
-        HEIF,
-        BMP,
-        WEBP,
-        ICO
+        JPEG, PNG, TIFF, GIF, BMP, HEIF, WMP, WEBP, ICO
     }
 }

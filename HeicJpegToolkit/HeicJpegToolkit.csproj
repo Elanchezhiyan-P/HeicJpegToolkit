@@ -12,7 +12,7 @@
     <Copyright>Copyright © Elanchezhiyan P 2025</Copyright>
     <PackageProjectUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</RepositoryUrl>
-    <Version>1.2.0</Version>
+    <Version>1.4.0</Version>
     <PackageTags>heic, jpeg, conversion, image-processing</PackageTags>
     <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
@@ -27,9 +27,12 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.5" />
   </ItemGroup>
 </Project>

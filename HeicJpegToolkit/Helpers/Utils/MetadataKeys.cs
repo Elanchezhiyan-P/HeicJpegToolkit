@@ -1,0 +1,136 @@
+﻿namespace HeicJpegToolkit.Helpers.Utils
+{
+    public static class MetadataKeys
+    {
+        public static readonly string[] System = {
+                "System.ApplicationName",
+                "System.Author",
+                "System.Comment",
+                "System.Copyright",
+                "System.DateAcquired",
+                "System.Keywords",
+                "System.Rating",
+                "System.SimpleRating",
+                "System.Subject",
+                "System.Title",
+                "System.FileSize",                // Added file size property
+                "System.DateCreated",             // Added creation date
+                "System.DateModified",            // Added modified date
+                "System.OriginalFileName",        // Added original file name
+                "System.FileExtension",           // Added file extension
+                "System.GPSLatitude",            // GPS latitude if it's an image or geotagged file
+                "System.GPSLongitude",           // GPS longitude if it's an image or geotagged file
+                "System.CameraModel",             // Camera model for images (EXIF)
+                "System.CameraMake",              // Camera make for images (EXIF)
+                "System.FlashUsed",               // Flash used for images (EXIF)
+                "System.ImageWidth",              // Image width for images (EXIF)
+                "System.ImageHeight"              // Image height for images (EXIF)
+            };
+        public static readonly string[] Photo =  {
+                "System.Photo.ApertureDenominator",
+                "System.Photo.ApertureNumerator",
+                "System.Photo.BrightnessDenominator",
+                "System.Photo.BrightnessNumerator",
+                "System.Photo.CameraManufacturer",
+                "System.Photo.CameraModel",
+                "System.Photo.CameraSerialNumber",
+                "System.Photo.Contrast",
+                "System.Photo.DateTaken",
+                "System.Photo.DigitalZoomDenominator",
+                "System.Photo.DigitalZoomNumerator",
+                "System.Photo.Event",
+                "System.Photo.EXIFVersion",
+                "System.Photo.ExposureBiasDenominator",
+                "System.Photo.ExposureBiasNumerator",
+                "System.Photo.ExposureIndexDenominator",
+                "System.Photo.ExposureIndexNumerator",
+                "System.Photo.ExposureProgram",
+                "System.Photo.ExposureTimeDenominator",
+                "System.Photo.ExposureTimeNumerator",
+                "System.Photo.Flash",
+                "System.Photo.FlashEnergyDenominator",
+                "System.Photo.FlashEnergyNumerator",
+                "System.Photo.FlashManufacturer",
+                "System.Photo.FlashModel",
+                "System.Photo.FNumberDenominator",
+                "System.Photo.FNumberNumerator",
+                "System.Photo.FocalLengthDenominator",
+                "System.Photo.FocalLengthInFilm",
+                "System.Photo.FocalLengthNumerator",
+                "System.Photo.FocalPlaneXResolutionDenominator",
+                "System.Photo.FocalPlaneXResolutionNumerator",
+                "System.Photo.FocalPlaneYResolutionDenominator",
+                "System.Photo.FocalPlaneYResolutionNumerator",
+                "System.Photo.GainControlDenominator",
+                "System.Photo.GainControlNumerator",
+                "System.Photo.ISOSpeed",
+                "System.Photo.LensManufacturer",
+                "System.Photo.LensModel",
+                "System.Photo.LightSource",
+                "System.Photo.MakerNote",
+                "System.Photo.MakerNoteOffset",
+                "System.Photo.MaxApertureDenominator",
+                "System.Photo.MaxApertureNumerator",
+                "System.Photo.MeteringMode",
+                "System.Photo.Orientation",
+                "System.Photo.ProgramMode",
+                "System.Photo.Saturation",
+                "System.Photo.Sharpness",
+                "System.Photo.ShutterSpeedDenominator",
+                "System.Photo.ShutterSpeedNumerator",
+                "System.Photo.SubjectDistanceDenominator",
+                "System.Photo.SubjectDistanceNumerator",
+                "System.Photo.TranscodedForSync",
+                "System.Photo.WhiteBalance",
+                "System.Photo.ShutterSpeed",
+                "System.Photo.FocalLength",
+                "System.Photo.DateTimeOriginal"
+            };
+        public static readonly string[] GPS =  {
+                "System.GPS.AltitudeDenominator",
+                "System.GPS.AltitudeNumerator",
+                "System.GPS.AltitudeRef",
+                "System.GPS.AreaInformation",
+                "System.GPS.Date",
+                "System.GPS.DestBearingDenominator",
+                "System.GPS.DestBearingNumerator",
+                "System.GPS.DestBearingRef",
+                "System.GPS.DestDistanceDenominator",
+                "System.GPS.DestDistanceNumerator",
+                "System.GPS.DestDistanceRef",
+                "System.GPS.DestLatitudeDenominator",
+                "System.GPS.DestLatitudeNumerator",
+                "System.GPS.DestLatitudeRef",
+                "System.GPS.DestLongitudeDenominator",
+                "System.GPS.DestLongitudeNumerator",
+                "System.GPS.DestLongitudeRef",
+                "System.GPS.Differential",
+                "System.GPS.DOPDenominator",
+                "System.GPS.DOPNumerator",
+                "System.GPS.ImgDirectionDenominator",
+                "System.GPS.ImgDirectionNumerator",
+                "System.GPS.ImgDirectionRef",
+                "System.GPS.LatitudeDenominator",
+                "System.GPS.LatitudeNumerator",
+                "System.GPS.LatitudeRef",
+                "System.GPS.LongitudeDenominator",
+                "System.GPS.LongitudeNumerator",
+                "System.GPS.LongitudeRef",
+                "System.GPS.MapDatum",
+                "System.GPS.MeasureMode",
+                "System.GPS.ProcessingMethod",
+                "System.GPS.Satellites",
+                "System.GPS.SpeedDenominator",
+                "System.GPS.SpeedNumerator",
+                "System.GPS.SpeedRef",
+                "System.GPS.Status",
+                "System.GPS.TrackDenominator",
+                "System.GPS.TrackNumerator",
+                "System.GPS.TrackRef",
+                "System.GPS.VersionID",
+                "System.GPS.LatitudeDecimal",
+                "System.GPS.LongitudeDecimal",
+                "System.GPS.Time"
+            };
+    }
+}
