@@ -1,31 +1,31 @@
-name: Publish NuGet Package
+name: Publish HeicJpegToolkit to NuGet
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Setup .NET
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.x' 
+          dotnet-version: '8.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./HeicJpegToolkit/HeicJpegToolkit.csproj
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./HeicJpegToolkit/HeicJpegToolkit.csproj --configuration Release --no-restore
 
-      - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkg
+      - name: Pack NuGet Package
+        run: dotnet pack ./HeicJpegToolkit/HeicJpegToolkit.csproj --configuration Release --no-build --output ./nupkg
 
-      - name: Push to NuGet
+      - name: Push to NuGet.org
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
