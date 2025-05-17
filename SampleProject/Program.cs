@@ -4,12 +4,12 @@ namespace SampleProject
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             string inputFilePath = ""; //Enter the input file path
             string outputFolderPath = string.Empty;
 
-            var result = await HeicJpegToolkit.HeicJpegToolkit.ConvertFile(inputFilePath, outputFolderPath, ImageFormat.JPEG);
+            var result = HeicJpegToolkit.HeicJpegToolkit.ConvertFile(inputFilePath, outputFolderPath, ImageFormat.JPEG);
 
             if (result.IsConverted)
             {
