@@ -11,7 +11,7 @@ namespace SampleProject
 
             var result = HeicJpegToolkit.HeicJpegToolkit.ConvertFile(inputFilePath, outputFolderPath, ImageFormat.JPEG);
 
-            if (result.IsConverted)
+            if (result.Success)
             {
                 Console.WriteLine($"Image has been converterd and placed in the folder {result.OutputFilePath}");
             }
