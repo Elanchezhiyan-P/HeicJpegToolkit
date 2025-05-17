@@ -38,5 +38,5 @@ jobs:
       - name: List files in ./nupkgs (for troubleshooting)
         run: ls -la ./nupkgs
 
-      - name: Publish the package to GPR
-        run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
+      - name: Publish the package to GitHub Packages
+        run: dotnet nuget push ./nupkgs/*.nupkg --source "https://nuget.pkg.github.com/Elanchezhiyan-P/index.json" --api-key ${{ secrets.NUGET_API_KEY }}
