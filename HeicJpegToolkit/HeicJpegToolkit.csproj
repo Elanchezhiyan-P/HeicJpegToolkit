@@ -12,7 +12,7 @@
     <Copyright>Copyright © Elanchezhiyan P 2025</Copyright>
     <PackageProjectUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/elanchezhiyan-p/HeicJpegToolkit</RepositoryUrl>
-    <Version>1.4.0</Version>
+    <Version>1.5.5</Version>
     <PackageTags>heic, jpeg, conversion, image-processing</PackageTags>
     <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
