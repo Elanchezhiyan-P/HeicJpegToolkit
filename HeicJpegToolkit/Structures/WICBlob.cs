@@ -1,7 +1,12 @@
-﻿namespace HeicJpegToolkit.Structures
+namespace HeicJpegToolkit.Structures
 {
-    public class WICBlob(byte[] bytes)
+    public class WICBlob
     {
-        public byte[] Bytes { get; } = bytes;
+        public byte[] Bytes { get; }
+
+        public WICBlob(byte[] bytes)
+        {
+            Bytes = bytes;
+        }
     }
 }

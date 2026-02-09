@@ -1,3 +1,5 @@
+using HeicJpegToolkit.Helpers.Enums;
+
 namespace HeicJpegToolkit.Helpers.Options
 {
     /// <summary>

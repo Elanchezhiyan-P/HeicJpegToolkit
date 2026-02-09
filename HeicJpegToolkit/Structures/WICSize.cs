@@ -1,9 +1,15 @@
-﻿namespace HeicJpegToolkit.Structures
+namespace HeicJpegToolkit.Structures
 {
-    public readonly struct WICSize(int width, int height) : IEquatable<WICSize>
+    public readonly struct WICSize : IEquatable<WICSize>
     {
-        public int Width { get; } = width;
-        public int Height { get; } = height;
+        public int Width { get; }
+        public int Height { get; }
+
+        public WICSize(int width, int height)
+        {
+            Width = width;
+            Height = height;
+        }
 
         public override bool Equals(object? obj)
         {
