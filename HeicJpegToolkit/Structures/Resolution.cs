@@ -1,8 +1,14 @@
-﻿namespace HeicJpegToolkit.Structures
+namespace HeicJpegToolkit.Structures
 {
-    public readonly struct Resolution(double dpiX, double dpiY)
+    public readonly struct Resolution
     {
-        public double DpiX { get; } = dpiX;
-        public double DpiY { get; } = dpiY;
+        public double DpiX { get; }
+        public double DpiY { get; }
+
+        public Resolution(double dpiX, double dpiY)
+        {
+            DpiX = dpiX;
+            DpiY = dpiY;
+        }
     }
 }
