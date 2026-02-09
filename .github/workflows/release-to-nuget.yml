@@ -16,15 +16,20 @@ jobs:
 
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
+      with:
+        # Use a recent SDK that supports your highest TFM (net10.0).
+        dotnet-version: '10.0.x'
+        include-prerelease: true
 
     - name: Build
       run: dotnet build -c Release
 
-    - name: Test
-      run: dotnet test -c Release --no-build
+    # Enable this step once you add test projects to the solution.
+    # - name: Test
+    #   run: dotnet test -c Release --no-build
 
     - name: Pack nugets
-      run: dotnet pack -c Release --no-build --output ./nupkgs
+      run: dotnet pack HeicJpegToolkit/HeicJpegToolkit.csproj -c Release --no-build --output ./nupkgs
 
     - name: Push to NuGet
-      run: dotnet nuget push "./nupkgs/*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      run: dotnet nuget push "./nupkgs/HeicJpegToolkit.*.nupkg" --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --skip-duplicate
